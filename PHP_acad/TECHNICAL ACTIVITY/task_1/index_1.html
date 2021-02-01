@@ -1,0 +1,315 @@
+<html>
+
+  <head>
+    <title>Student Registration Form</title>
+    <link rel="stylesheet"
+        href="style.css">
+  </head>
+
+  <body>
+    <h3>STUDENT REGISTRATION FORM</h3>
+
+    <form action="./task_1.php"
+        method="post">
+
+      <table align="center"
+          cellpadding=10>
+        <th bgcolor="black">
+          Student Information
+        </th>
+        <tr>
+          <!----- Last Name ---------------------------------------------------------->
+          <td>LAST NAME<input type="text"
+                name="Last_Name"
+                maxlength="30"
+                placeholder="Last Name"
+                required />
+          </td>
+
+          <!----- First Name ---------------------------------------------------------->
+          <td>FIRST NAME<input type="text"
+                name="First_Name"
+                maxlength="30"
+                placeholder="First Name"
+                required />
+          </td>
+
+          <!----- Middle Name ---------------------------------------------------------->
+          <td>MIDDLE NAME<input type="text"
+                name="Middle_Name"
+                maxlength="30"
+                placeholder="Full Middle Initial"
+                required />
+          </td>
+        </tr>
+
+        <tr>
+          <!----- Gender ----------------------------------------------------------->
+          <td> GENDER:
+            Male <input type="checkbox"
+                name="Gender"
+                value="Male" />
+            Female <input type="checkbox"
+                name="Gender"
+                value="Female" />
+          </td>
+
+          <!----- Date Of Birth -------------------------------------------------------->
+          <td>DATE OF BIRTH<input type="date"
+                name="birthDate"
+                maxlength="30"
+                required />
+          </td>
+
+          <!----- Other Sibling -------------------------------------------------------->
+          <td>
+            If the student has other siblings in school, please list them:
+            <br>
+            <input type="text"
+                name="other-sibling">
+          </td>
+        </tr>
+
+        <tfoot>
+          <tr>
+            <td>
+              Proof of Birth
+              <input type="checkbox"
+                  name="credential"
+                  value="birth-proof" />
+
+              Baptismal Record
+              <input type="checkbox"
+                  name="credential"
+                  value="baptimal" />
+            </td>
+
+            <td> Birth Registration
+              <input type="checkbox"
+                  name="credential"
+                  value="birth-registration" />
+
+              Birth Certificate
+              <input type="checkbox"
+                  name="credential"
+                  value="birth-cert" />
+            </td>
+
+            <td>Immigration Papers/Card
+              <input type="checkbox"
+                  name="credential"
+                  value="" />
+
+              Passport
+              <input type="checkbox"
+                  name="credential"
+                  value="pasport" />
+            </td>
+
+            <td> Other<input type="checkbox"
+                  name="credential"
+                  value="other" /></td>
+          </tr>
+        </tfoot>
+      </table>
+
+      <!----- Previous School -------------------------------------------------------->
+      <table align="center"
+          cellpadding=10>
+        <th bgcolor="black">Previous School Information</th>
+        <tr>
+          <td>
+            Name of Previous School Board / Minucipality <input type="text"
+                name="previous-school-board"
+                value=""
+                required>
+          </td>
+          <td>Last date attended <input type="text"
+                name="last-date-attended"
+                value="">
+
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Name of Previous School <input type="text"
+                name="previous-school"
+                value="">
+          </td>
+
+          <td>
+            Grade at previous school <input type="text"
+                name="grade"
+                value=""
+                required>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Language of Instruction:
+            <input type="checkbox"
+                name="language-instruction"
+                value="english"> English
+            <input type="checkbox"
+                name="language-instruction"
+                value="french"> French
+            <input type="checkbox"
+                name="language-instruction"
+                value="other"> Other
+          </td>
+
+          <td>
+            Reason for Transfer:
+            <input type="text"
+                name="transfer-reason"
+                value=""
+                required>
+          </td>
+        </tr>
+
+        <tfoot>
+          <td>
+            Did the student ever attend a Waterloo Region District School Board school in the past?
+            <input type="checkbox"
+                name="attend-waterloo"
+                value="Yes"> Yes
+            <input type="checkbox"
+                name="attend-waterloo"
+                value="No"> No
+          </td>
+
+          <td>
+            If yes, name school(s):
+            <input type="text"
+                name="waterlooSchool"
+                value="">
+          </td>
+        </tfoot>
+      </table>
+
+      <!----- Health Info -------------------------------------------------------->
+      <table align="center"
+          cellpadding=10>
+        <th bgcolor="black">
+          Health Information
+        </th>
+
+        <tr>
+          <td>
+            Medical Conditions (Include Information on special equipment or medication, if required):
+            <input type="text"
+                name="medical-condition"
+                value="">
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Does the student require an epi-pen?
+            <input type="checkbox"
+                name="yes-epi"
+                value="Yes"> Yes
+            <input type="checkbox"
+                name="no-epi"
+                value="No"> No
+          </td>
+        </tr>
+      </table>
+
+      <table align="center"
+          cellpadding=10>
+        <th bgcolor="black">Citizenship Information</th>
+
+        <tr>
+          <td>
+            Birth Country :
+            <input type="text"
+                name="birth-country"
+                value=""
+                required>
+            If Canda, Province of Birth:
+            <input type="text"
+                name="province-birth"
+                value="">
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            Country of Citizenship:
+            <input type="text"
+                name="citizenship"
+                value=""
+                required>
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            If student not born in Canada, provide data student entered Canda to live for the first time:
+            <input type="date"
+                name="canada-live"
+                value="">
+          </td>
+        </tr>
+
+        <!-- Citizenship Information -->
+        <tr>
+          <tfoot>
+            <th class="footer">For School Use</th>
+            <tr class="school-use">
+              <td>
+                <input type="checkbox"
+                    name="canada-status"
+                    value="canadian-citizen"> Canadian Citizen
+
+                <input type="checkbox"
+                    name="canada-status"
+                    value="permanent"> Permanent resident / Landed Immigrant
+
+                <input type="checkbox"
+                    name="canada-status"
+                    value="student-permit"> Study Permit / Student VISA
+
+                <input type="checkbox"
+                    name="canada-status"
+                    value="refugee"> Refugee Clairmant
+
+                <input type="checkbox"
+                    name="canada-status"
+                    value="native"> Native Ancestry
+
+                <input type="checkbox"
+                    name="canada-status"
+                    value="others"> Others (specify):
+              </td>
+
+            </tr>
+          </tfoot>
+        </tr>
+
+      </table>
+
+      <table class="buttons"
+          align="center">
+        <tr>
+          <td colspan="2"
+              align="center">
+            <input type="submit"
+                name="submit"
+                value="Submit">
+            <input type="reset"
+                name="reset"
+                value="Reset">
+          </td>
+        </tr>
+      </table>
+
+
+    </form>
+
+  </body>
+
+</html>

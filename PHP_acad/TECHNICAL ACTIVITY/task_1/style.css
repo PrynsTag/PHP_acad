@@ -1,0 +1,74 @@
+body {
+    background-color: rgb(192, 195, 192);
+}
+
+h3 {
+    font-family: Calibri;
+    font-size: 25pt;
+    font-style: normal;
+    font-weight: bold;
+    color: rgb(78, 84, 84);
+    text-align: center;
+    text-decoration: underline
+}
+
+table {
+    font-family: Calibri;
+    color: white;
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: bold;
+    text-align: ;
+    background-color: rgba(113, 111, 111, 0.78);
+    border-collapse: collapse;
+    margin-bottom: 5px;
+    width: 120vh;
+}
+
+table.inner {
+    border: 0px;
+}
+
+input[type=text],
+input[type=date] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #eeeeee;
+    padding: 3px 10px;
+    outline: none;
+    color: #eeeeee;
+}
+
+[placeholder]:focus::-::-webkit-input-placeholder {
+    transition: text-indent 0.4s 0.4s ease;
+    text-indent: -100%;
+    opacity: 1;
+    text-align: center;
+}
+
+::placeholder {
+    color: rgba(209, 217, 222, 0.42);
+}
+
+td {
+    text-align: left;
+    vertical-align: middle;
+}
+
+tfoot {
+    background-color: #4d4d4d;
+}
+
+.footer {
+    padding: 10px 0 0;
+}
+
+.school-use td input {
+    margin-left: 15px;
+}
+
+.buttons td {
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(192, 195, 192);
+}
