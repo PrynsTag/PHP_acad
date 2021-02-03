@@ -1,0 +1,51 @@
+<?php
+    require_once("task_1.php")
+?>
+<!DOCTYPE html>
+<html lang="en"
+    dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+
+    <table align="center"
+        cellpadding=10
+        border="1"
+        width="1000px">
+      <tr>
+        <th>no.</th>
+        <th>name</th>
+        <th>Image</th>
+        <th>age</th>
+        <th>birthday</th>
+        <th>contact number</th>
+      </tr>
+
+      <?php
+          $name = array_column($firstRow, 0);
+          array_multisort($name, SORT_ASC, $firstRow);
+          $counter = 1;
+          foreach ($firstRow as $key => $value) {
+              echo "<tr>";
+              echo "<td>".$counter++."</td>";
+              for ($i=0; $i < 5; $i++) {
+                  if ($i == 1) {
+                      $image = $value[$i];
+                      echo "<td>"."<img src="."./my_image.jpeg"."/>"."</td>";
+                      continue;
+                  }
+                  echo "<td>".$value[$i]."</td>";
+              }
+              echo "</tr>";
+          }
+        ?>
+
+
+    </table>
+  </body>
+
+</html>
