@@ -35,7 +35,9 @@
               for ($i=0; $i < 5; $i++) {
                   if ($i == 1) {
                       $image = $value[$i];
-                      echo "<td>"."<img src="."./images/my_image.jpeg"."/>"."</td>";
+                      $size = 200;
+                      $format = "<td><img src=%s height=%d, width=%d></td>";
+                      echo sprintf($format, $image, $size, $size);
                       continue;
                   }
                   echo "<td>".$value[$i]."</td>";
