@@ -1,0 +1,30 @@
+<?php
+    require("../task_1.php");
+?>
+<!DOCTYPE html>
+<html lang="en"
+    dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>To Build A Fire</title>
+    <link rel="stylesheet"
+        href="../css/master.css">
+  </head>
+
+  <body>
+    <br>
+    <a href="../main_1.html">Back to Menu</a>
+    <article class="prose">
+      <h1>To Build a Fire</h1>
+      <?php
+            $filename = "./to-build-a-fire.txt";
+            $handle = fopen($filename, "r");
+            $contents = fread($handle, filesize($filename));
+            echo nl2p($contents);
+            fclose($handle);
+      ?>
+    </article>
+  </body>
+
+</html>

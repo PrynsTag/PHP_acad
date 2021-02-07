@@ -1,0 +1,30 @@
+<?php
+    require("../task_1.php");
+?>
+<!DOCTYPE html>
+<html lang="en"
+    dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>An Occurrence at Owl Creek Bridge</title>
+    <link rel="stylesheet"
+        href="../css/master.css">
+  </head>
+
+  <body>
+    <br>
+    <a href="../main_1.html">Back to Menu</a>
+    <article class="prose">
+      <h1>An Occurrence at Owl Creek Bridge</h1>
+      <?php
+            $filename = "./an-occurrence-at-owl-creek-bridge-military-bridge.txt";
+            $handle = fopen($filename, "r");
+            $contents = fread($handle, filesize($filename));
+            echo nl2p($contents);
+            fclose($handle);
+      ?>
+    </article>
+  </body>
+
+</html>

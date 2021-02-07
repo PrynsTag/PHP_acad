@@ -1,0 +1,55 @@
+<?php
+    require("./task_2.php");
+?>
+<!DOCTYPE html>
+<html lang="en"
+    dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+    <table align="center"
+        cellpadding="20"
+        border="1">
+      <tr>
+        <th colspan="6">List of Names</th>
+      </tr>
+
+      <tr>
+        <td>Name</td>
+
+        <td>Number of characters</td>
+
+        <td>Uppercase first character</td>
+
+        <td>Replace vowels with @</td>
+
+        <td>Check position of character "a"</td>
+
+        <td>Reverse name</td>
+      </tr>
+
+      <?php
+          $vowels = array("a", "e", "i", "o", "u", "A", "E", "I", "O", "U");
+          foreach($listNames as $value) {
+            echo sprintf("<tr>
+                <td>$value</td>
+                <td>%d</td>
+                <td>%s</td>
+                <td>%s</td>
+                <td>%d</td>
+                <td>%s</td>
+            </tr>", strlen($value),
+            ucfirst(strtolower($value)),
+            str_replace($vowels, "@", $value),
+            stripos($value, 'a'),
+            strrev($value));
+          }
+      ?>
+    </table>
+  </body>
+
+</html>

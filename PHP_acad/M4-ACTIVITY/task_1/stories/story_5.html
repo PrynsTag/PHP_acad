@@ -1,0 +1,30 @@
+<?php
+    require("../task_1.php");
+?>
+<!DOCTYPE html>
+<html lang="en"
+    dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>The Story of An Hour</title>
+    <link rel="stylesheet"
+        href="../css/master.css">
+  </head>
+
+  <body>
+    <br>
+    <a href="../main_1.html">Back to Menu</a>
+    <article class="prose">
+      <h1>The Story of An Hour</h1>
+      <?php
+            $filename = "./the-story-of-an-hour.txt";
+            $handle = fopen($filename, "r");
+            $contents = fread($handle, filesize($filename));
+            echo nl2p($contents);
+            fclose($handle);
+      ?>
+    </article>
+  </body>
+
+</html>
