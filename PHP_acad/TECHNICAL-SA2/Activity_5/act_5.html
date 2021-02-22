@@ -1,0 +1,55 @@
+<?php
+    require_once("act_5.php");
+?>
+
+<!DOCTYPE html>
+<html lang="en"
+    dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <style media="screen">
+    body {
+      text-align: center
+    }
+  </style>
+
+  <body>
+    <table align="center"
+        cellpadding=10
+        border="1"
+        width="1000px"
+        style="text-align: center">
+      <tr>
+        <th>No.</th>
+        <th>Description</th>
+        <th>Output</th>
+      </tr>
+
+      <?php
+          $counter = 1;
+            foreach($myFunctions as $key => $arrayObj) {
+              echo "<tr>";
+              echo "<td>".$counter++."</td>";
+              foreach($arrayObj as $index => $value) {
+                  if ($key == 19) {
+                      echo "<td>".$value."</td>";
+                      continue;
+                  } else if ($index == 1) {
+                    echo "<td>".'*'.$value.'*'."</td>";
+                  } else {
+                    echo "<td>".$value."</td>";
+                  }
+              }
+              echo "</tr>";
+            }
+
+        ?>
+
+    </table>
+  </body>
+
+</html>

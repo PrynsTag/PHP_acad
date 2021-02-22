@@ -1,0 +1,51 @@
+<?php
+    require_once("act_2.php")
+?>
+<!DOCTYPE html>
+<html lang="en"
+    dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+
+    <table align="center"
+        cellpadding=10
+        border="1"
+        width="1000px"
+        style="text-align: center">
+      <th colspan="4">My Fruits</th>
+      <tr>
+        <th>Image</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Facts</th>
+      </tr>
+
+      <?php
+          $name = array_column($myFruits, 1);
+          array_multisort($name, SORT_ASC, $myFruits);
+          $counter = 1;
+          foreach ($myFruits as $key => $value) {
+              echo "<tr>";
+              for ($i=0; $i < 4; $i++) {
+                  if ($i == 0) {
+                      $image = $value[$i];
+                      $format = "<td><img src=$image height=200, width=200></td>";
+                      echo $format;
+                      continue;
+                  }
+                  echo "<td>".$value[$i]."</td>";
+              }
+              echo "</tr>";
+          }
+        ?>
+
+
+    </table>
+  </body>
+
+</html>

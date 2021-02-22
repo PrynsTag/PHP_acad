@@ -1,0 +1,42 @@
+<?php
+    require_once("act_3.php");
+?>
+<!DOCTYPE html>
+<html lang="en"
+    dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+
+  <body>
+
+    <table align="center"
+        cellpadding=10
+        border="1"
+        width="1000px"
+        style="text-align: center">
+      <th colspan="3">Volume of Shapes</th>
+      <tr>
+        <th>Values</th>
+        <th>Formula</th>
+        <th>Answer</th>
+      </tr>
+
+      <?php
+
+            foreach($myFormula as $arrayObj) {
+                echo "<tr>";
+                foreach($arrayObj as $value) {
+                    echo "<td>".$value."</td>";
+                }
+                echo "</tr>";
+            }
+
+        ?>
+
+    </table>
+  </body>
+
+</html>
