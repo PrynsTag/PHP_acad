@@ -1,6 +1,6 @@
 <?php
 /* draws a calendar */
-function draw_calendar($month)
+function draw_calendar($month): string
 {
     $dateObj = DateTime::createFromFormat('!m', $month);
     $monthName = $dateObj->format('F');
@@ -9,7 +9,12 @@ function draw_calendar($month)
     $calendar = '<table cellpadding="0" cellspacing="0" class="calendar" align="center">';
     /* table headings */
     $headings = array('Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday');
-    $calendar.= '<tr><th colspan="7" bgcolor="black" style="color:white">'.$monthName.'</th></tr><tr class="calendar-row"><td class="calendar-day-head">'.implode('</td><td class="calendar-day-head">', $headings).'</td></tr>';
+    $calendar.= '<tr>' .
+        '<th colspan="7" bgcolor="black" style="color:white">'.$monthName.'</th>' .
+        '</tr>' .
+        '<tr class="calendar-row">' .
+        '<td class="calendar-day-head">'.implode('</td>' .
+            '<td class="calendar-day-head">', $headings).'</td></tr>';
 
     /* days and weeks vars now ... */
     $year = 2021;
@@ -31,8 +36,8 @@ function draw_calendar($month)
     /* keep going with days.... */
     for ($list_day = 1; $list_day <= $days_in_month; $list_day++):
     /* add in the day number */
-    if ($list_day == 16 && $month == 1) {
-        $calendar.= '<td class="calendar-day" style="background-color: red;">';
+    if ($list_day === 16 && $month === "1") {
+        $calendar.= '<td class="calendar-day" style="background-color: #ff0000;">';
         $calendar.= '<div class="day-number">'.$list_day.'</div>';
     } else {
         $calendar.= '<td class="calendar-day">';
@@ -43,9 +48,9 @@ function draw_calendar($month)
     $calendar.= str_repeat('<p> </p>', 2);
 
     $calendar.= '</td>';
-    if ($running_day == 6):
+    if ($running_day === 6):
         $calendar.= '</tr>';
-    if (($day_counter+1) != $days_in_month):
+    if ($day_counter+1 !== $days_in_month):
             $calendar.= '<tr class="calendar-row">';
     endif;
     $running_day = -1;
@@ -72,40 +77,3 @@ function draw_calendar($month)
     /* all done, return result */
     return $calendar;
 }
-
-/* sample usages */
-// echo '<h2>January 2021</h2>';
-// echo draw_calendar(1, 2021);
-//
-// echo '<h2>February 2021</h2>';
-// echo draw_calendar(2, 2021);
-//
-// echo '<h2>March 2021</h2>';
-// echo draw_calendar(3, 2021);
-//
-// echo '<h2>April 2021</h2>';
-// echo draw_calendar(4, 2021);
-//
-// echo '<h2>May 2021</h2>';
-// echo draw_calendar(5, 2021);
-//
-// echo '<h2>June 2021</h2>';
-// echo draw_calendar(6, 2021);
-//
-// echo '<h2>July 2021</h2>';
-// echo draw_calendar(7, 2021);
-//
-// echo '<h2>August 2021</h2>';
-// echo draw_calendar(8, 2021);
-//
-// echo '<h2>September 2021</h2>';
-// echo draw_calendar(9, 2021);
-//
-// echo '<h2>October 2021</h2>';
-// echo draw_calendar(10, 2021);
-//
-// echo '<h2>November 2021</h2>';
-// echo draw_calendar(11, 2021);
-//
-// echo '<h2>December 2021</h2>';
-// echo draw_calendar(12, 2021);

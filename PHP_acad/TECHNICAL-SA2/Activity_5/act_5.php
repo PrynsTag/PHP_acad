@@ -1,5 +1,5 @@
 <?php
-    $string = isset($_POST['string']) ? $_POST['string'] : ' ';
+    $string = $_POST['string'] ?? ' ';
     $string = htmlspecialchars($string);
     echo '<form method=post action="">';
     echo '<h1>String Functions in PHP</h2>';
@@ -11,7 +11,7 @@
     list($beforeWord, $afterWord) = explode(" html ", $string);
     list($beforeThis, $afterThis) = explode(htmlspecialchars(" <input> "), $string);
 
-    function wordFormat($word)
+    function wordFormat($word): string
     {
         return '*'.$word.'*';
     }
@@ -33,8 +33,11 @@
         array("Last 4 characters", substr($string, -4)),
         array("4 characters starting from the 20'th Position", substr($string, 20, -4)),
         array("Position of the word \"guide\"", strpos($string, "guide")),
-        array("Position of the word \"UE\"", strpos($string, "UE") ? strpos($string, "UE") : "bool(false)"),
-        array("\"HTML\" word in uppercase", $beforeWord." ".strtoupper(explode(" ", $string)[5])." ".$afterWord),
-        array("\"<'INPUT'>\" word in uppercase", $beforeThis." ".strtoupper(explode(" ", $string)[7])." ".$afterThis),
-        array("Strings converted to array", implode("<br>", array_map("wordFormat", explode(" ", trim($string)))))
+        array("Position of the word \"UE\"", strpos($string, "UE") ?: "bool(false)"),
+        array("\"HTML\" word in uppercase",
+            sprintf("%s %s %s", $beforeWord, strtoupper(explode(" ", $string)[5]), $afterWord)),
+        array("\"<'INPUT'>\" word in uppercase",
+            sprintf("%s %s %s", $beforeThis, strtoupper(explode(" ", $string)[7]), $afterThis)),
+        array("Strings converted to array",
+            implode("<br>", array_map("wordFormat", explode(" ", trim($string)))))
     );

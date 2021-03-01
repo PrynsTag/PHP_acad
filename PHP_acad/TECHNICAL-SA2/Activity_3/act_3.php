@@ -1,7 +1,7 @@
 <?php
     function cube($value)
     {
-        return pow($value, 3);
+        return $value ** 3;
     }
 
     function prism($a, $b, $c)
@@ -11,7 +11,7 @@
 
     function cylinder($r, $h)
     {
-        return pi() * pow($r, 2) * $h;
+        return pi() * ($r ** 2) * $h;
     }
 
     function pyramid($b, $h)
@@ -21,7 +21,7 @@
 
     function sphere($r)
     {
-        return (4/3) * pi() * pow($r, 3);
+        return (4/3) * M_PI * ($r ** 3);
     }
 
     $myFormula = array(
