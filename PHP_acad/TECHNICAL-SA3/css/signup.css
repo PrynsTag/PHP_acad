@@ -1,6 +1,6 @@
 body {
 	color: #fff;
-	background: #3598dc;
+	background-color: #674BAF;
 	font-family: 'Roboto', sans-serif;
 }
 .form-control {
@@ -54,10 +54,7 @@ body {
 	border: none;
 	min-width: 140px;
 }
-.signup-form .btn:hover, .signup-form .btn:focus {
-	background: #2389cd !important;
-	outline: none;
-}
+
 .signup-form a {
 	color: #fff;
 	text-decoration: underline;

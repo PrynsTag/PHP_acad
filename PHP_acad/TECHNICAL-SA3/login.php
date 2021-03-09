@@ -9,7 +9,8 @@
             <input type="text" name="login-username" class="form-control" placeholder="Username" required="required">
         </div>
         <div class="form-group">
-            <input type="password" name="login-password" class="form-control" placeholder="Password" required="required">
+            <input type="password" name="login-password" class="form-control" placeholder="Password"
+                   required="required">
         </div>
         <div class="form-group">
             <button type="submit" name="login" class="btn btn-primary btn-block">Log in</button>

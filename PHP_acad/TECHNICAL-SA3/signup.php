@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="css/signup.css">
 <div class="signup-form">
     <form action="./inc/signup.inc.php" method="post"
-          oninput='password.setCustomValidity(password.value !== confirm_password.value ? "Passwords do not match." : "")'>
+          oninput='password.setCustomValidity(password.value !== confirm_password.value ? "Password is not the same with the confirm password." : "")'>
         <h2>Sign Up</h2>
         <p>Please fill in this form to create an account!</p>
         <hr>
@@ -47,51 +47,46 @@
                 <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy</a></label>
         </div>
         <div class="form-group">
-            <button type="submit" name="signup" class="btn btn-primary btn-lg">Sign Up</button>
+            <button type="submit" name="signup" class="btn btn-primary btn-block">Sign Up</button>
         </div>
     </form>
     <div class="hint-text">Already have an account? <a href="login.php">Login here</a></div>
 </div>
 <?php
 require_once "./dbConnection.inc";
-
 if (isset($conn) && $conn) {
-    if (isset($_SESSION["username"])) {
-        $username = $_SESSION["username"];
-        $password = $_SESSION["password"];
-    }
-    $user_query = "SELECT * FROM user_database.user_information;";
-//    WHERE username = '$username' AND password = '$password';";
-    $result = mysqli_query($conn, $user_query);
-    $resultCheck = mysqli_num_rows($result);
+    if (isset($_GET["signup"], $_GET["username"])) {
+        $username = $_GET["username"];
+        $user_query = "SELECT * FROM user_database.user_information WHERE username = '$username';";
+        $result = mysqli_query($conn, $user_query);
+        $resultCheck = mysqli_num_rows($result);
 
-    if ($resultCheck > 0) {
-        echo "<table align='center' border='1' cellpadding='10'>";
-        echo "<tr>";
-        echo "<td>Full Name</td>";
-        echo "<td>Username</td>";
-        echo "<td>Password</td>";
-        echo "<td>Birthday</td>";
-        echo "<td>Email</td>";
-        echo "<td>Contact number</td>";
-        echo "</tr>";
-        echo "<tr>";
-        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
-            echo sprintf("<td>%s %s %s</td>", $row["firstname"], $row["middlename"], $row["lastname"]);
-            echo "<td>" . $row["username"] . "</td>";
-            echo "<td>" . $row["password"] . "</td>";
-            echo "<td>" . date('M d, Y', strtotime($row["birthday"])) . "</td>";
-            echo "<td>" . $row["email"] . "</td>";
-            echo "<td>" . $row["contact number"] . "</td>";
+
+        if ($resultCheck > 0) {
+            echo "<table align='center' border='1' cellpadding='10'>";
+            echo "<tr>";
+            echo "<td>Full Name</td>";
+            echo "<td>Username</td>";
+            echo "<td>Password</td>";
+            echo "<td>Birthday</td>";
+            echo "<td>Email</td>";
+            echo "<td>Contact number</td>";
             echo "</tr>";
-            $_SESSION["username"] = $row["username"];
-            $_SESSION["name"] = sprintf("<td>%s %s %s</td>", $row["firstname"], $row["middlename"], $row["lastname"]);
+            while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+                echo "<tr>";
+                echo sprintf("<td>%s %s %s</td>", $row["firstname"], $row["middlename"], $row["lastname"]);
+                echo "<td>" . $row["username"] . "</td>";
+                echo "<td>" . $row["password"] . "</td>";
+                echo "<td>" . date('M d, Y', strtotime($row["birthday"])) . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
+                echo "<td>" . $row["contact number"] . "</td>";
+                echo "</tr>";
+            }
         }
-    }
+    } 
 } else {
     die("Connection failed: " . mysqli_error($conn));
 }
-
 require_once "footer.php";
 ?>
 

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Simple Signup and Login Page</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
             <ul class="navbar-nav navbar-nav-scroll me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a aria-current="page" class="nav-link active" href="#">Home</a>
+                    <a aria-current="page" class="nav-link active" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">About us</a>
@@ -25,26 +25,27 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Find Blogs</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.php">Sign up</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Log in</a>
-                </li>
                 <?php
-                    session_start();
-                    if (isset($_SESSION["username"])) {
-                        echo '<div class="dropdown">';
-                        echo '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
+                session_start();
+                if (isset($_SESSION["username"])) {
+                    echo '<div class="dropdown">';
+                    echo '<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton2"
                             data-bs-toggle="dropdown" aria-expanded="false">';
-                        echo $_SESSION["username"];
-                        echo '</button>';
-                        echo '<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2">';
-                        echo '<li><a class="dropdown-item active" href="profile.php">Profile</a></li>';
-                        echo '<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
-                        echo '</ul>';
-                        echo '</div>';
-                    }
+                    echo $_SESSION["username"];
+                    echo '</button>';
+                    echo '<ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton2" style="min-width: inherit">';
+                    echo '<li><a class="dropdown-item active" href="profile.php">Profile</a></li>';
+                    echo '<li><a class="dropdown-item" href="logout.php">Logout</a></li>';
+                    echo '</ul>';
+                    echo '</div>';
+                } else {
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="signup.php">Sign up</a>';
+                    echo '</li>';
+                    echo '<li class="nav-item">';
+                    echo '<a class="nav-link" href="login.php">Log in</a>';
+                    echo '</li>';
+                }
                 ?>
             </ul>
         </div>
