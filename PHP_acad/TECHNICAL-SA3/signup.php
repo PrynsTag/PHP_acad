@@ -83,7 +83,7 @@ if (isset($conn) && $conn) {
                 echo "</tr>";
             }
         }
-    } 
+    }
 } else {
     die("Connection failed: " . mysqli_error($conn));
 }

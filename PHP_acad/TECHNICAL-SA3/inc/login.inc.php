@@ -7,6 +7,11 @@ if (isset($conn, $_POST["login"]) && $conn) {
     $user_password = mysqli_real_escape_string($conn, $_POST["login-password"]);
     $_SESSION["password"] = $user_password;
 
+    if (!empty($_POST["remember"])) {
+        setcookie("remember_username", $_POST["login-username"], 0, "../login.php");
+        setcookie("remember_password", $_POST["login-password"], 0, "../login.php");
+    }
+
     $sql = "SELECT id FROM user_database.user_information WHERE username = '$user_username'  AND  password = '$user_password';";
     $result = mysqli_query($conn, $sql);
 
