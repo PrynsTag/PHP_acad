@@ -1,0 +1,60 @@
+<?php
+    require_once "header.php";
+    if (!isset($_SESSION["username"])) { header("Location: signup.php"); }
+?>
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<script src="https://kit.fontawesome.com/b04d6d48dc.js" crossorigin="anonymous"></script>
+
+<!-- Stylesheets -->
+<link rel="stylesheet" href="./css/index.css">
+
+<title>Frontend Mentor | Huddle landing page with single introductory section</title>
+
+<body>
+<main>
+    <div class="wrapper">
+
+        <div class="mockup-grid">
+            <img src="img/illustration-mockups.svg" alt="illustration-mockups">
+        </div>
+
+        <div class="content-grid">
+            <h1 class="content-heading">Build The Community Your Fans Will Love</h1>
+
+            <p class="content-info">Huddle re-imagines the way we build communities. You have a voice, but so does your
+                audience.
+                Create connections with your users as you engage in genuine discussion.
+            </p>
+
+            <button class="btn-register">Register</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="social-icons">
+        <ul class="social-links">
+            <li>
+                <div><i class="fab fa-facebook-f facebook"></i></div>
+            </li>
+            <li>
+                <div><i class="fab fa-twitter twitter"></i></div>
+            </li>
+            <li>
+                <div><i class="fab fa-instagram instagram"></i></div>
+            </li>
+        </ul>
+    </div>
+    <p class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#">Prince Carl S. Velasco</a>.
+    </p>
+</footer>
+<?php require_once "footer.php" ?>
