@@ -5,7 +5,6 @@ session_start();
 if (isset($conn, $_POST["login"]) && $conn) {
     $user_username = mysqli_real_escape_string($conn, $_POST["login-username"]);
     $user_password = mysqli_real_escape_string($conn, $_POST["login-password"]);
-    $_SESSION["password"] = $user_password;
 
     if (!empty($_POST["remember"])) {
         setcookie("remember_username", $_POST["login-username"], 0, "../login.php");
@@ -18,6 +17,7 @@ if (isset($conn, $_POST["login"]) && $conn) {
     if (mysqli_num_rows($result) > 0) {
         // Session Variables
         $_SESSION["username"] = $user_username;
+        $_SESSION["password"] = $user_password;
         header("Location: ../index.html");
     } else {
         echo "Wrong username or password";

@@ -3,9 +3,7 @@ require_once "./dbConnection.inc";
 require_once "header.php";
 
 if (isset($_SESSION["username"], $conn) && $conn) {
-    if (isset($_SESSION["password"])) {
-        $user_password = $_SESSION["password"];
-    }
+    if (isset($_SESSION["password"])) { $user_password = $_SESSION["password"]; }
     $user_username = $_SESSION["username"];
     $query = "SELECT * FROM user_database.user_information WHERE username = '$user_username';";
     $result = mysqli_query($conn, $query);
