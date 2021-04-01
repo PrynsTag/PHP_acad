@@ -1,4 +1,7 @@
-<?php require_once "header.php"; ?>
+<?php
+    require_once "header.php";
+    if (!isset($_SESSION["username"])) { header("Location: login.php"); }
+?>
 <link rel="stylesheet" href="css/signup.css">
 <div class="signup-form">
     <form action="include/signup.inc.php" method="post"
