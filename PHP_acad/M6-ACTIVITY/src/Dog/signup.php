@@ -1,5 +1,5 @@
 <?php
-require_once "dbConnection.inc";
+require_once $_SERVER["DOCUMENT_ROOT"] . "/PHP_acad/M6-ACTIVITY/config/dbConnection.inc";
 
 $name = $_POST["name"];
 $breed = $_POST["breed"];
@@ -15,4 +15,4 @@ $sql = "INSERT INTO dogrecord (Name, Breed, Age, Address, Color, Height, Weight)
 if (isset($conn) && $conn) { mysqli_query($conn, $sql); }
 else { die("Connection failed: " . mysqli_error($conn)); }
 
-header("Location: ./DogRegister.html?signup=success");
+header("Location: /PHP_acad/M6-ACTIVITY/public/DogRegister.html?signup=success");
