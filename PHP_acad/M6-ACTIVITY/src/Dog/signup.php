@@ -15,4 +15,4 @@ $sql = "INSERT INTO dogrecord (Name, Breed, Age, Address, Color, Height, Weight)
 if (isset($conn) && $conn) { mysqli_query($conn, $sql); }
 else { die("Connection failed: " . mysqli_error($conn)); }
 
-header("Location: /PHP_acad/M6-ACTIVITY/public/DogRegister.html?signup=success");
+header("Location: /PHP_acad/M6-ACTIVITY/public/register.php?signup=success");
