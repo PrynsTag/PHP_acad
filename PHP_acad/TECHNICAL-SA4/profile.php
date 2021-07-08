@@ -22,7 +22,7 @@ if (isset($_SESSION["username"], $conn) && $conn) {
     }
 }
 ?>
-<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="assets/css/profile.css">
 <div class="page-content page-container" id="page-content">
     <div class="padding">
         <div class="container d-flex justify-content-center">

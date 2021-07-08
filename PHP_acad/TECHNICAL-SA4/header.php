@@ -9,7 +9,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html"><img alt="my logo" height="50" src="img/my_logo.png" width="180"></a>
+        <a class="navbar-brand" href="index.html"><img alt="my logo" height="50" src="assets/img/my_logo.png" width="180"></a>
         <button aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
                 class="navbar-toggler"
                 data-bs-target="#navbarNavDropdown" data-bs-toggle="collapse" type="button">

@@ -1,5 +1,5 @@
 <?php require_once "header.php"; ?>
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="assets/css/login.css">
 <div class="login-form">
     <form action="include/login.inc.php" method="post">
         <h2 class="text-center">Log in</h2>

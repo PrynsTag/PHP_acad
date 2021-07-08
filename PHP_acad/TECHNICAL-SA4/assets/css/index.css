@@ -29,7 +29,7 @@ body {
     font-size: 18px;
     color: #fff;
     height: 100vh;
-    background: url(../../TECHNICAL-SA3/img/bg-desktop.svg) center center / cover no-repeat, var(--violet);
+    background: url(../../../TECHNICAL-SA3/img/bg-desktop.svg) center center / cover no-repeat, var(--violet);
     width: 100%;
 }
 
@@ -501,7 +501,7 @@ body {
     body {
         font-size: 9px;
         padding: 50px 40px 30px;
-        background: url(../../TECHNICAL-SA3/img/bg-mobile.svg) top right / cover no-repeat, var(--violet);
+        background: url(../../../TECHNICAL-SA3/img/bg-mobile.svg) top right / cover no-repeat, var(--violet);
         text-align: center;
     }
 

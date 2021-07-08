@@ -2,7 +2,7 @@
     require_once "header.php";
     if (!isset($_SESSION["username"])) { header("Location: login.php"); }
 ?>
-<link rel="stylesheet" href="css/signup.css">
+<link rel="stylesheet" href="assets/css/signup.css">
 <div class="signup-form">
     <form action="include/signup.inc.php" method="post"
           oninput='password.setCustomValidity(password.value !== confirm_password.value ? "Password is not the same with the confirm password." : "")'>

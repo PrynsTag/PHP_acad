@@ -7,7 +7,7 @@ if (isset($conn) && $conn) {
     $resultCheck = mysqli_num_rows($result);
 
     if ($resultCheck > 0) {
-        echo '<link rel="stylesheet" href="css/viewuser.css">';
+        echo '<link rel="stylesheet" href="assets/css/viewuser.css">';
         echo '<div class="limiter">';
         echo '<div class="container-table100">';
         echo '<div class="wrap-table100">';
