@@ -20,11 +20,13 @@
         <div class="col">
           <label class="w-100">
             <input type="text" class="form-control" name="first_name" placeholder="First Name">
+            <small class="text-danger w-100"><?= form_error("first_name") ?></small>
           </label>
         </div>
         <div class="col">
           <label class="w-100">
             <input type="text" class="form-control" name="last_name" placeholder="Last Name">
+            <small class="text-danger w-100"><?= form_error("last_name") ?></small>
           </label>
         </div>
       </div>
@@ -34,6 +36,7 @@
         <div class="col">
           <label class="w-100">
             <input type="text" class="form-control" name="username" placeholder="Username">
+            <small class="text-danger w-100"><?= form_error("username") ?></small>
           </label>
         </div>
         <div class="col">
@@ -51,11 +54,13 @@
         <div class="col">
           <label class="w-100">
             <input type="password" class="form-control" name="password" placeholder="Password">
+            <small class="text-danger w-100"><?= form_error("password") ?></small>
           </label>
         </div>
         <div class="col">
           <label class="w-100">
             <input type="password" class="form-control" name="cpassword" placeholder="Confirm Password">
+            <small class="text-danger w-100"><?= form_error("cpassword") ?></small>
           </label>
         </div>
 
@@ -63,7 +68,8 @@
     </div>
     <div class="form-group">
       <label class="w-100">
-        <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        <input type="email" class="form-control" name="email" placeholder="Email">
+        <small class="text-danger w-100"><?= form_error("email") ?></small>
       </label>
     </div>
     <div class="form-group">

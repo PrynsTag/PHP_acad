@@ -21,7 +21,7 @@ class Register extends CI_Controller
 
         $this->form_validation->set_rules("email", "Email Address", "required|trim|valid_email|is_unique[tsa3_table.tsa3_email]");
         $this->form_validation->set_rules("first_name", "First Name", "required|trim");
-        $this->form_validation->set_rules("last_name", "First Name", "required|trim");
+        $this->form_validation->set_rules("last_name", "Last Name", "required|trim");
         $this->form_validation->set_rules("username", "Username", "required|trim|is_unique[tsa3_table.tsa3_username]");
         $this->form_validation->set_rules("user-level", "User Level", "required|trim");
         $this->form_validation->set_rules("password", "Password", "required|trim");
