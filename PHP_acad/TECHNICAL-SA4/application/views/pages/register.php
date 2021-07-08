@@ -2,8 +2,7 @@
 <?= link_tag("assets/css/signup.css") ?>
   <!--<link rel="stylesheet" href="assets/css/signup.css">-->
   <div class="signup-form">
-    <form action="<?= base_url() ?>include/signup.inc.php" method="post"
-          oninput='password.setCustomValidity(password.value !== confirm_password.value ? "Password is not the same with the confirm password." : "")'>
+    <form action="<?= base_url() ?>include/signup.inc.php" method="post">
       <h2>Sign Up</h2>
       <p>Please fill in this form to create an account!</p>
       <hr>
