@@ -1,14 +1,9 @@
-<?php
-    require_once "header.php";
-    if (!isset($_SESSION["username"])) { header("Location: login.php"); }
-?>
-<link rel="stylesheet" href="assets/css/signup.css">
+<?= link_tag("assets/css/signup.css") ?>
 <div class="signup-form">
-    <form action="include/signup.inc.php" method="post"
-          oninput='password.setCustomValidity(password.value !== confirm_password.value ? "Password is not the same with the confirm password." : "")'>
+    <form action="<?= base_url() . "profile/add_user" ?>" method="post">
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="profile_panel.php">Admin Account</a></li>
+                <li class="breadcrumb-item"><a href="../../../profile_panel.php">Admin Account</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Add User</li>
             </ol>
         </nav>
@@ -90,7 +85,7 @@
             <button type="submit" name="save" class="btn btn-primary w-100">Save</button>
         </div>
     </form>
-    <div class="hint-text">Already have an account? <a href="login.php">Login here</a></div>
+    <div class="hint-text">Already have an account? <a href="../../../login.php">Login here</a></div>
 </div>
 <?php require_once "footer.php"; ?>
 
